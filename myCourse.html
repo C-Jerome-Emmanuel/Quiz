@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - Jerry's Masterclass</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://support.freedomscientific.com/teachers/lessons/images/QuizCollageJAWS-01.png'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px); 
+            z-index: -1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-top: 10px; /* Adjust margin-top to remove gap */
+            margin-bottom: 20px;
+        }
+
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .course-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top */
+            height: 300px; /* Fixed height for consistent card size */
+            transition: transform 0.2s ease;
+        }
+
+        .course-card:hover {
+            transform: scale(1.05);
+        }
+
+        .course-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            margin-top: 0; /* Ensure the title is at the top */
+        }
+
+        .course-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Allow description to take available space */
+        }
+
+        .course-button {
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.2s ease;
+            align-self: center; /* Center the button */
+        }
+
+        .course-button:hover {
+            background-color: #45a049;
+        }
+        .button-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        button {
+            background: rgb(63, 161, 186);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: rgb(50, 140, 160);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Courses</h1>
+        <div class="course-container">
+            <div class="course-card">
+                <div class="course-title">Python Programming</div>
+                <div class="course-description">Learn Python from the basics to advanced topics like object-oriented programming and libraries, with hands-on projects for real-world applications.</div>
+                <a href="quiz.html" class="course-button">Take Test</a>
+            </div>
+
+            <div class="course-card">
+                <div class="course-title">C Programming</div>
+                <div class="course-description">Master C programming fundamentals, from syntax to memory management, and build efficient systems and applications through practical coding exercises.</div>
+                <a href="quiz.html" class="course-button">Take Test</a>
+            </div>
+            
+        </div>
+        <div class="button-container"></div>
+            <button onclick="window.location.href='home.html'">Back to Home</button>
+        </div>
+    </div>
+
+</body> 
+</html> 
