@@ -13,9 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            /* Changed to 100vh */
             margin: 0;
-            /* Set margin to 0 */
             position: relative;
         }
 
@@ -27,7 +25,6 @@
 
         }
 
-        /* Background image styling */
         body::before {
             content: "";
             position: absolute;
@@ -159,7 +156,6 @@
             'rgba(153, 102, 255, 0.7)'
         ];
 
-        // Bar Chart
         const ctx1 = document.getElementById('scoreChart').getContext('2d');
         new Chart(ctx1, {
             type: 'bar',
@@ -183,7 +179,6 @@
             }
         });
 
-        // Pie Chart
         const ctx2 = document.getElementById('performanceChart').getContext('2d');
         new Chart(ctx2, {
             type: 'pie',

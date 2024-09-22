@@ -6,7 +6,7 @@
     <title>Login - Jerry's Masterclass Quiz</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Inline CSS for demonstration. Ideally, place this in style.css */
+        
 
         body {
             background-color: #e0f7fa;
@@ -130,14 +130,13 @@
 
     <script>
         document.getElementById('login-form').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevent form from submitting normally
+            event.preventDefault(); 
 
             const usernameInput = document.getElementById('username').value.trim();
             const passwordInput = document.getElementById('password').value.trim();
             const errorMessage = document.getElementById('error-message');
 
             try {
-                // Fetch users from users.json
                 const users = JSON.parse(document.getElementById('users-data').textContent);
                 console.log(users);
                 ///const response = await fetch('./users.json');
@@ -146,22 +145,17 @@
                 //}
                 //const users = await response.json();
 
-                // Find user with matching username and password
                 const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
 
                 if (user) {
-                    // Successful login
                     localStorage.setItem('currentUser', JSON.stringify({
                         username: user.username,
                         name: user.name,
                         loggedIn: true
                     }));
-                    // Optionally, clear error message
                     errorMessage.style.display = 'none';
-                    // Redirect to quiz.html
                     window.location.href = 'home.html';
                 } else {
-                    // Invalid credentials
                     errorMessage.style.display = 'block';
                 }
             } catch (error) {

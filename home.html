@@ -17,7 +17,6 @@
             overflow: hidden;
         }
 
-        /* Background image styling */
         body::before {
             content: "";
             position: absolute;
@@ -28,7 +27,7 @@
             background-image: url('https://support.freedomscientific.com/teachers/lessons/images/QuizCollageJAWS-01.png');
             background-size: cover;
             background-position: center;
-            filter: blur(10px); /* Adjust the blur level here */
+            filter: blur(10px); 
             z-index: -1;
         }
 
@@ -61,7 +60,7 @@
             background-color: #45a049;
         }
 
-        /* Buttons section */
+        
         .buttons {
             margin-top: 30px;
             display: flex;
@@ -99,7 +98,6 @@
     </div>
 
     <script>
-        // Function to decide if user has selected Login or Logout functionality
         function checkLogin(){
             const loginButton = document.getElementById('loginButton');
             if(loginButton.textContent == 'Login')
@@ -108,16 +106,13 @@
                location.href='login.html';
         }
 
-        // Simulating user data fetched from a JSON file
         function getUserData() {
             return new Promise((resolve, reject) => {
-                // Simulate a fetch request to 'users.json'
                 const userData = JSON.parse(localStorage.getItem("currentUser"));
                 resolve(userData);
             });
         }
 
-        // Function to update login button and show buttons if user is logged in
         function updateLoginButton() {
             getUserData().then(user => {
                 const loginButton = document.getElementById('loginButton');
@@ -126,15 +121,15 @@
                 if (user.loggedIn) {       
                     loginButton.textContent = "Logout";
                     welcome.innerHTML = "Welcome " + user.name;
-                    navButtons.style.display = "flex"; // Show buttons for logged-in users
+                    navButtons.style.display = "flex"; 
                 } else {
                     loginButton.textContent = "Login";
-                    navButtons.style.display = "none"; // Hide buttons if not logged in
+                    navButtons.style.display = "none"; 
                 }
             });
         }
 
-        // Call the function to update the login button and navigation buttons on page load
+        
         updateLoginButton();
     </script>
 
