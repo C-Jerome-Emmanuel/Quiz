@@ -70,13 +70,39 @@
 <body>
   <div class="container">
     <h2>Doubt Center</h2>
-    <textarea placeholder="Type your doubt here..."></textarea>
-    <select>
+    <textarea id="doubt" placeholder="Type your doubt here..."></textarea>
+    <select id="subject">
       <option value="" disabled selected>Select Subject</option>
-      <option value="social">Social</option>
-      <option value="science">Science</option>
+      <option value="python">Python</option>
+      <option value="c">C</option>
     </select>
-    <button>Send</button>
+    <button id="submitBtn">Send</button>
   </div>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const doubt = document.getElementById('doubt').value;
+      const subject = document.getElementById('subject').value;
+
+      fetch('/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ doubt, subject })
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+        document.getElementById('doubt').value = '';
+        document.getElementById('subject').selectedIndex = 0;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+[
+    {
+        "username": "johndoe",
+        "quizname": "quiz1",
+        "score": "5"
+    },
+    {
+        "username": "johndoe",
+        "quizname": "quiz2",
+        "score": "8"
+    },
+    {
+        "username": "johndoe",
+        "quizname": "quiz3",
+        "score": "10"
+    },
+    {
+        "username": "johndoe",
+        "quizname": "quiz4",
+        "score": "6"
+    },
+    {
+        "username": "johndoe",
+        "quizname": "quiz5",
+        "score": "4"
+    }
+]

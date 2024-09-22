@@ -6,8 +6,6 @@
     <title>Login - Jerry's Masterclass Quiz</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        
-
         body {
             background-color: #e0f7fa;
             font-family: 'Arial', sans-serif;
@@ -130,23 +128,17 @@
 
     <script>
         document.getElementById('login-form').addEventListener('submit', async function(event) {
-            event.preventDefault(); 
+            event.preventDefault();  
 
             const usernameInput = document.getElementById('username').value.trim();
             const passwordInput = document.getElementById('password').value.trim();
             const errorMessage = document.getElementById('error-message');
 
             try {
-                const users = JSON.parse(document.getElementById('users-data').textContent);
-                console.log(users);
-                ///const response = await fetch('./users.json');
-                //if (!response.ok) {
-                 //   throw new Error('Failed to fetch user data.');
-                //}
-                //const users = await response.json();
+                 const response = await fetch('users.json'); 
+                 const users = await response.json();
 
                 const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
-
                 if (user) {
                     localStorage.setItem('currentUser', JSON.stringify({
                         username: user.username,
